@@ -1,18 +1,20 @@
 import { Injectable } from '@angular/core';
-import { Gastos } from '../interface/gastos';
+import { Gasto } from '../interface/gasto';
+
 @Injectable({
   providedIn: 'root'
 })
 export class PresupuestoService {
 
-  gastos: Gastos[]= [];
+  gastos: Gasto[]=[];
+
   constructor() { }
 
-  public agregarGasto(monto: number. gasto: string){
-    this.gastos.push({monto,gasto})
+  public agregarGasto(monto: number, gasto: string){
+    this.gastos.push({monto,gasto});
   }
 
-  public mostrarGastos({
-    return.this.gastos;
-  })
+  public mostrarGastos() {
+    return this.gastos;
+  }
 }
