@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { IonicModule } from '@ionic/angular';
+
 
 const routes: Routes = [
   {
@@ -14,7 +16,13 @@ const routes: Routes = [
   {
     path: 'presupuesto',
     loadChildren: () => import('./presupuesto/presupuesto.module').then( m => m.PresupuestoPageModule)
+  },  {
+    path: 'alumnos',
+    loadChildren: () => import('./alumnos/alumnos.module').then( m => m.AlumnosPageModule)
   },
+
+
+  
 ];
 
 @NgModule({
