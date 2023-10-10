@@ -4,7 +4,7 @@ import { RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
-import { FloatMenuComponent } from './float-menu/float-menu.component';
+import { FloatMenuComponent } from './float-menu/FloatMenuComponent';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
