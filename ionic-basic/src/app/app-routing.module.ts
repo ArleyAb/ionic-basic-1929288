@@ -9,23 +9,37 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'receta',
+    redirectTo: '/main/receta',
     pathMatch: 'full'
   },
   {
-    path: 'receta',
-    loadChildren: () => import('./receta/receta.module').then( m => m.RecetaPageModule),
-  canActivate: [AutGuardGuard]
-  },
-  {
-    path: 'detalle-receta',
-    loadChildren: () => import('./detalle-receta/detalle-receta.module').then( m => m.DetalleRecetaPageModule),
-    canActivate:[AutGuardGuard]
-  },
-  {
-    path: 'tabs',
-    loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule),
-    canActivate: [AutGuardGuard]
+    path: 'main',
+    children:[
+      {
+        path: 'presupuesto',
+        loadChildren: () => import('./presupuesto/presupuesto.module').then( m => m.PresupuestoPageModule)
+      },
+      {
+        path: 'destinos',
+        loadChildren: () => import('./destinos/destinos.module').then( m => m.DestinosPageModule)
+      },
+      {
+        path: 'receta',
+        loadChildren: () => import('./receta/receta.module').then( m => m.RecetaPageModule)
+      },
+      {
+        path: 'detalle-receta',
+        loadChildren: () => import('./detalle-receta/detalle-receta.module').then( m => m.DetalleRecetaPageModule)
+      },
+      {
+        path: 'tabs',
+        loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
+      },
+      {
+        path: 'alumnos',
+        loadChildren: () => import('./alumnos/alumnos.module').then( m => m.AlumnosPageModule)
+      }
+    ],
   },
   {
     path: 'login',
@@ -39,18 +53,6 @@ const routes: Routes = [
     path: 'logout',
     loadChildren: () => import('./logout/logout.module').then( m => m.LogoutPageModule)
   },
-
-  {
-    path: 'presupuesto',
-    loadChildren: () => import ('./presupuesto/presupuesto.module').then(m => m.PresupuestoPageModule),
-  canActivate: [AutGuardGuard]
-  } 
-
-  {
-    path: 'destinos',
-    loadChildren: ()=> import('./destinos/destinos.module').then (m => m.DestinosPageModule),
-    canActivate: [AutGuardGuard]
-  }
 
 
 ];
