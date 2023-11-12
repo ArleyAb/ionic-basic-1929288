@@ -38,6 +38,10 @@ const routes: Routes = [
       {
         path: 'alumnos',
         loadChildren: () => import('./alumnos/alumnos.module').then( m => m.AlumnosPageModule)
+      },
+      {
+        path: 'destinos-api',
+        loadChildren: () => import ('./destinos-api/destinos-api.module').then( m => m.DestinosApiPageModule)
       }
     ],
   },
